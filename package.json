@@ -1,0 +1,25 @@
+{
+  "name": "movie-app",
+  "version": "1.0.0",
+  "description": "A very simple node movie search app using themoviedb API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kelley12/NodeMovieApp.git"
+  },
+  "author": "Blake Kelley <Blake.T.Kelley@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kelley12/NodeMovieApp/issues"
+  },
+  "homepage": "https://github.com/Kelley12/NodeMovieApp#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "request": "^2.88.0"
+  }
+}

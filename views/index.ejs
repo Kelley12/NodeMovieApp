@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.1/bootstrap-table.min.js"></script>
+	<title>Movie Search</title>
+</head>
+<body>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>                        
+				</button>
+				<a class="navbar-brand" href="#">
+					<img src="http://gravatar.com/avatar/a4d170eca08689b2f91f0ef52ea2b6f1?s=200" class="img-circle logo" alt="Logo">
+				</a>
+			</div>
+			<div class="collapse navbar-collapse" id="myNavbar">
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="#">HOME</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="content-container">
+		<div class="bg-1">
+			<div id="search" class="container text-center">
+				<h3>Movie Search</h3>
+				 <form id="searchForm" action="/" method="post">
+					<div class="input-group">
+						<input name="searchText" id="searchText" type="text" class="form-control" placeholder="Movie Title...">
+						<div class="input-group-btn">
+							<button class="btn btn-default" type="submit">
+								<i class="glyphicon glyphicon-search"></i>
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+
+		<div id="searchResults" class="container text-center">
+			<% if(movies !== null){
+			for (var i = 0; i < movies.length; i++) {%>
+				<div class="row">
+					<div class="col-sm-2"><img src="<%= movies[i].poster %>"></div>
+					<div class="col-sm-3"><%= movies[i].title %><%if(!isNaN(movies[i].releaseDate)){%> (<%=movies[i].releaseDate%>)<%}%></div>
+					<div class="col-sm-6"><%= movies[i].description %></div>
+				</div>
+			<% }} %>
+			<% if(error !== null){ %>
+				<h1><small><%= error %></small></h1>
+			<% } %>
+		</div>
+	</div>
+
+	<footer class="text-center footer">
+	  <a class="up-arrow" href="#" data-toggle="tooltip" title="Back to top">
+		<span class="glyphicon glyphicon-chevron-up"></span>
+	  </a><br><br>
+	  <p>Made By Blake Kelley using <a href="http://getbootstrap.com/" data-toggle="tooltip" title="Boostrap">Boostrap</a></p> 
+	</footer>
+</body>
+</html>
